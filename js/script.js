@@ -45,7 +45,7 @@ function translateKeyPressed(key){
 
 function action(input) {
     //limit display to 12 characters
-    if (disp[0].innerText.length < 13 || input == '=' || input == 'aClear' || input == 'clear' || input == 'backspace' ||  input == '-1') {
+    if (disp[0].innerText.length < 12 || input == '=' || input == 'aClear' || input == 'clear' || input == 'Backspace' ||  input == '-1') {
         switch (input) {
             case '0':
             case '1':
@@ -124,14 +124,24 @@ function action(input) {
                 try {
                     if (eval(answArr.join('')).toString().length <= 12) {
                         disp[0].innerText = eval(answArr.join(''));
+                        answArr = [];
+                        scr = [];
+                        answArr.push(disp[0].innerText);
+                        scr.push(disp[0].innerText);
                     } else {
                         disp[0].innerText = eval(answArr.join('')).toFixed(11);
+                        answArr = [];
+                        scr = [];
+                        answArr.push(disp[0].innerText);
+                        scr.push(disp[0].innerText);
                     }
                 } catch (e) {
-                    disp[0].innerText = 'syntax error'
+                    disp[0].innerText = 'syntax error';
+                    answArr = [];
+                    scr = [];
+                    answArr.push('0');
+                    scr.push('0');
                 }
-                scr = [];
-                answArr = [];
                 break;
 
             case 'aClear':
