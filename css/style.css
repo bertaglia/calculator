@@ -1,0 +1,87 @@
+body {
+    font-family: 'Electrolize', sans-serif;
+    background-color: #fff;
+    background: url("../img/backgroundCalc.jpg") center center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#calc {
+    height: 460px;
+    width: 310px;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(95, 124, 224);
+    border: 3px solid #000000;
+    border-radius: 8px;
+    box-shadow: 2px 5px 15px 1px rgb(41, 41, 41), inset 0px 0px 0px 0px #89847e;
+}
+
+#calcButtons {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    display: inline-block;
+    width: 282px;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 0px;
+}
+
+button {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    margin: 2px 0px 4px 0px;
+    height: 50px;
+    width: 65px;
+    box-shadow: 1px 3px 1px 1px #222121;
+}
+
+button:active {
+    transform: translate(0px, 3px);
+    box-shadow: 1px 3px 1px 1px #222121;
+}
+
+button:hover {
+    box-shadow: 1px 3px 1px 1px #222121;
+}
+
+#equal {
+    width: 135px;
+}
+
+#screen {
+    margin-top: 15px;
+    border: 1px solid #b4b39d;
+    border-radius: 5px;
+    background-color: #c3c2ab;
+    box-shadow: inset 0 0 1em grey;
+}
+
+#res {
+    font-size: 32px;
+    margin-right: 3px;
+}
+
+#hist {
+    font-size: 14px;
+    color: rgb(120, 120, 120);
+    margin-right: 5px;
+}
+
+span.footer {
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+span.footer a {
+    text-decoration: none;
+    color: #D12026;
+}
