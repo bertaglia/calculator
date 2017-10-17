@@ -44,8 +44,12 @@ function translateKeyPressed(key){
 
 
 function action(input) {
+
+    var allowedChar = ['=', 'aClear', 'clear', 'Backspace', '+', '-', '/', '*', '-1', '', '', '', '', '', ]
+
     //limit display to 12 characters
-    if (disp[0].innerText.length < 12 || input == '=' || input == 'aClear' || input == 'clear' || input == 'Backspace' ||  input == '-1') {
+    //if (disp[0].innerText.length < 12 || input == '=' || input == 'aClear' || input == 'clear' || input == 'Backspace' ||  input == '-1') {
+    if (disp[0].innerText.length < 12 || allowedChar.indexOf(input) > -1) {
         switch (input) {
             case '0':
             case '1':
@@ -128,12 +132,16 @@ function action(input) {
                         scr = [];
                         answArr.push(disp[0].innerText);
                         scr.push(disp[0].innerText);
+                        //prevents 'infinity' result
+                        if (disp[0].innerText == 'Infinity') throw 'error';
                     } else {
-                        disp[0].innerText = eval(answArr.join('')).toFixed(11);
+                        disp[0].innerText = eval(answArr.join('')).toFixed(eval(12 - Math.round(eval(answArr.join(''))).toString().length));
                         answArr = [];
                         scr = [];
                         answArr.push(disp[0].innerText);
                         scr.push(disp[0].innerText);
+                        //prevents 'infinity' result
+                        if (disp[0].innerText == 'Infinity') throw 'error';
                     }
                 } catch (e) {
                     disp[0].innerText = 'syntax error';
